@@ -1,0 +1,116 @@
+{
+    // Editor settings
+    "editor.rulers": [80, 120],
+    "editor.minimap.enabled": false,  // Disable minimap to save screen space
+    "editor.renderWhitespace": "boundary",  // Makes whitespace visible
+    "editor.wordWrap": "off",  // Prevents line wrapping
+    "editor.bracketPairColorization.enabled": true,  // Colorizes matching brackets
+    "editor.guides.bracketPairs": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
+    "editor.hover.enabled": true,
+    "editor.suggestSelection": "first",
+    "editor.tabSize": 4,
+    "editor.inlineSuggest.enabled": true,
+
+    // Python settings
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.rulers": [88],  // Black's default line length
+        "editor.tabSize": 4,
+        "analysis.typeCheckingMode": "basic",
+        "analysis.autoImportCompletions": true,
+        "testing.pytestEnabled": true
+    },
+
+    // Jupyter settings
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "jupyter.askForKernelRestart": false,  // Reduces prompts
+    "jupyter.interactiveWindow.textEditor.executeSelection": true,
+
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+
+    // Git settings
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+
+    // Terminal settings
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "line",
+
+    // File explorer settings
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+
+    // Theme settings 
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.iconTheme": "material-icon-theme",   
+
+    // Format settings
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+
+    // Telemetry
+    "telemetry.telemetryLevel": "off",
+    "redhat.telemetry.enabled": false,
+
+    // Markdown settings
+    "markdownlint.config": {
+    "MD013": {
+        "line_length": 120,        // Matches your editor ruler
+        "code_blocks": false,      // Don't enforce line length in code blocks
+        "tables": false            // Don't enforce line length in tables
+    },
+    "MD024": {
+        "siblings_only": true      // Allow same heading in different sections
+    },
+    "MD025": true,                // Single top-level heading
+    "MD026": true,                // No trailing punctuation in headings
+    "MD029": {
+        "style": "ordered"         // Ordered lists should use incremental numbers
+    },
+    "MD031": true,                // Blank lines around fenced code blocks
+    "MD032": true,                // Blank lines around lists
+    "MD034": true,                // No bare URLs
+    "MD040": true,                // Fenced code blocks should have a language specified
+    "MD041": true,                // First line should be a top-level heading
+    "MD046": {
+        "style": "consistent"      // Consistent code block style
+        }
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+        "editor.formatOnSave": true,
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 120,
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        }
+    },
+
+    // Additional settings
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#ff4081"
+    },
+    "isort.args": [
+        "--profile",
+        "black"
+    ],
+    "python.languageServer": "Pylance"
+}
