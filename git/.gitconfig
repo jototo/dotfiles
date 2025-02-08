@@ -8,5 +8,5 @@
 	email = 29579893+jototo@users.noreply.github.com
 [core]
 	autocrlf = input
-[credential]
-	helper = osxkeychain
+[includeIf "gitdir:~/"]
+    path = ~/.gitconfig.os
