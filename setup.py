@@ -152,13 +152,29 @@ class DevEnvironmentManager:
         if not os.path.exists(venv_path):
             self.run_command(["python", "-m", "venv", venv_path])
 
-    def setup_git(self) -> None:
+    def setup_git(self):
         """Setup Git configuration"""
         self.logger.info("Setting up Git configuration...")
 
+        # Setup main gitconfig
         gitconfig_source = os.path.join(self.dotfiles_path, "git", ".gitconfig")
         gitconfig_target = os.path.join(self.home, ".gitconfig")
+
+        # Setup OS-specific config
+        if self.is_windows:
+            os_config_source = os.path.join(
+                self.dotfiles_path, "git", ".gitconfig.windows"
+            )
+        else:
+            os_config_source = os.path.join(
+                self.dotfiles_path, "git", ".gitconfig.macos"
+            )
+
+        os_config_target = os.path.join(self.home, ".gitconfig.os")
+
+        # Create the symlinks
         self.create_symlink(gitconfig_source, gitconfig_target)
+        self.create_symlink(os_config_source, os_config_target)
 
     def setup_zsh(self) -> None:
         """Setup Zsh and Oh My Zsh configuration"""
