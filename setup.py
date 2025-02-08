@@ -205,14 +205,14 @@ class DevEnvironmentManager:
         os.makedirs(self.dotfiles_path, exist_ok=True)
 
         # Run setup steps
-        self.install_packages()
+        # self.install_packages()
         self.setup_git()
         self.setup_vscode()
-        self.setup_python_env()
+        # self.setup_python_env()
 
-        if not self.is_windows:
-            self.setup_zsh()
-            self.setup_iterm()
+        # if not self.is_windows:
+        #     self.setup_zsh()
+        #     self.setup_iterm()
 
         self.logger.info("Setup complete! 🎉")
 
